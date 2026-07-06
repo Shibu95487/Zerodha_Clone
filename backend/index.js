@@ -9,7 +9,13 @@ const { Position } = require("./model/PositionsModel");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://zerodha-clone-jsxw.vercel.app",
+    "https://zerodha-clone-kn3z.vercel.app"
+  ],
+  credentials: true
+}));
 app.use(bodyParser.json());
 // ==================== ADD HOLDINGS ====================
 
